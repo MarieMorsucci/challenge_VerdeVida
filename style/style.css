@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    outline: solid 1px green
+}
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+
+
+nav a[href="#"] {
+background-color: hwb(90 57% 17%);
+color: black;
+}
+
+body{
+    background-image: url('../assets/fondo_op.jpg');
+    background-size: cover;
+    
+}
+
+color{
+    color: #bbd6bf;
+}
