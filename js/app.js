@@ -26,3 +26,23 @@ select.addEventListener('change', event => {
         funciones.renderCards(filteredArticles, container)
     }
 })
+
+let idsCarrito = []
+let lsCarrito = JSON.parse(localStorage.getItem('idsCarrito'))
+
+if (lsCarrito) {
+    idsCarrito = lsCarrito
+}
+
+container.addEventListener('click', event => {
+    let productoId = event.target.dataset.id
+    console.log(productoId)
+    if(productoId) {
+        if(!idsCarrito.includes(productoId)) {
+            idsCarrito.push(productoId)
+        } else {
+            idsCarrito = idsCarrito.filter(id => id != productoId)
+        }
+    }
+    localStorage.setItem('idsCarrito', JSON.stringify(idsCarrito))
+})
