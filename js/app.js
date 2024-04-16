@@ -40,10 +40,10 @@ container.addEventListener('click', event => {
     if(productoId) {
         if(!idsCarrito.includes(productoId)) {
             idsCarrito.push(productoId)
-            event.target.parentElement.innerHTML = `<img class ="h-[35px]" data-id = ${productoId} src = "../assets/agregado.png"></img>`
+            event.target.parentElement.innerHTML = `<img class ="h-[35px] lg:h-[50px]" data-id = ${productoId} src = "../assets/agregado.png"></img>`
         } else {
             idsCarrito = idsCarrito.filter(id => id != productoId)
-            event.target.parentElement.innerHTML =  `<img data-id = ${productoId} src="../assets/carrito.png" class ="h-[35px]"></img>`
+            event.target.parentElement.innerHTML =  `<img data-id = ${productoId} src="../assets/carrito.png" class ="h-[35px] lg:h-[50px]"></img>`
 
         }
     }

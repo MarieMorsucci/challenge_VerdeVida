@@ -2,7 +2,7 @@
     margin: 0;
     padding : 0;
     box-sizing: border-box;
-    outline: solid 1px green 
+    /* outline: solid 1px green  */
 }
 
 .montserrat {
@@ -21,7 +21,9 @@ color: black;
 
 body{
     background-image: url('../assets/fondo_op.jpg');
-    background-size: cover;
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 color{
