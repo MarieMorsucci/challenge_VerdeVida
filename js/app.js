@@ -1,4 +1,4 @@
-import funciones from './modulo.js'
+import funciones from '..js/modulo.js'
 
 let articulos =  data.map(articulo => articulo)
 let container = document.querySelector('#cardsContainer')
