@@ -25,10 +25,20 @@ export function renderCards (articulos, container) {
     articulos.forEach(articulo => {
       template.innerHTML += createCard(articulo)  
     })
-    return template
+    return container.innerHTML = template.innerHTML
+}
+
+export function filterArticles(articulos, categoria, texto, container) {
+    
+    let filteredArticles = articulos.filter(articulo => ((categoria === 'todo' || articulo.categoria === categoria) && articulo.nombre.toLowerCase().includes(texto)))
+    if (filteredArticles.length === 0) {
+        container.innerText = 'Lo siento no tenemos artículos que coincidan con su búsqueda.'
+    }
+    return filteredArticles
 }
 
 export default {
     createCard,
-    renderCards
+    renderCards,
+    filterArticles
 }
