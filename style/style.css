@@ -21,7 +21,9 @@ color: black;
 
 body{
     background-image: url('../assets/fondo_op.jpg');
-    background-size: cover;
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 color{

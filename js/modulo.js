@@ -1,7 +1,7 @@
 export function createCard(articulo) {
     let template = document.createElement('template')
-    template.innerHTML = `<article class ="flex gap-4 w-full pr-4 h-[160px] bg-neutral-400 bg-opacity-70 rounded-lg">
-    <img src=${articulo.imagen} alt = ${articulo.nombre} class ="h-[160px] w-[120px] md:w-[160px] object-cover">
+    template.innerHTML = `<article class ="flex gap-4 w-full pr-4 h-[200px] md:h-[160px] bg-neutral-400 bg-opacity-70 rounded-lg">
+    <img src=${articulo.imagen} alt = ${articulo.nombre} class ="h-[200px] w-[120px] md:w-[170px] object-cover md:h-[160px]">
     <div class ="text-sm md:text-base w-[80%] h-[120px]">
         <h2 class ="text-lg text-lime-900 py-1">${articulo.nombre}</h2>
         <p>${articulo.descripcion}</p>
@@ -11,7 +11,7 @@ export function createCard(articulo) {
                 <p class ="text-lg text-lime-900">Precio: $${articulo.precio_venta}</p>
             </div>    
             <button data-id = ${articulo.id}>
-                <img  data-id = ${articulo.id} src="../assets/carrito.png" class ="h-[35px]">
+                <img  data-id = ${articulo.id} src="../assets/carrito.png" class ="h-[35px] md:h-[50px]">
             </button>
         </div>
     </div>
