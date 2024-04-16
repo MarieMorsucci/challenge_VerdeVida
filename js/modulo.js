@@ -3,12 +3,12 @@ export function createCard(articulo) {
     template.innerHTML = `<article class ="flex gap-4 w-full pr-4 h-[160px] bg-neutral-400 bg-opacity-70 rounded-lg">
     <img src=${articulo.imagen} alt = ${articulo.nombre} class ="h-[160px] w-[120px] md:w-[160px] object-cover">
     <div class ="text-sm md:text-base w-[80%] h-[120px]">
-        <h2>${articulo.nombre}</h2>
+        <h2 class ="text-lg text-lime-900 py-1">${articulo.nombre}</h2>
         <p>${articulo.descripcion}</p>
         <div class ="flex justify-between">
             <div>
-                <p>Stock:${articulo.stock}</p>
-                <p>Precio:$${articulo.precio_venta}</p>
+                <p><em>Stock: ${articulo.stock}</em></p>
+                <p class ="text-lg text-lime-900">Precio: $${articulo.precio_venta}</p>
             </div>    
             <button data-id = ${articulo.id}>
                 <img  data-id = ${articulo.id} src="../assets/carrito.png" class ="h-[35px]">
