@@ -1,6 +1,6 @@
 export function createCard(articulo) {
     let template = document.createElement('template')
-    template.innerHTML = `<article class ="flex gap-4 w-full h-[160px] ">
+    template.innerHTML = `<article class ="flex gap-4 w-full h-[160px] bg-neutral-400 bg-opacity-70 rounded-lg">
     <img src=${articulo.imagen} alt = ${articulo.nombre} class ="h-[160px] w-[120px] object-cover">
     <div class ="text-sm w-[80%] h-[120px]">
         <h2>${articulo.nombre}</h2>
@@ -10,9 +10,9 @@ export function createCard(articulo) {
                 <p>Stock:${articulo.stock}</p>
                 <p>Precio:$${articulo.precio_venta}</p>
             </div>    
-            <div >
-                <img src="../assets/carrito.png" class ="h-[35px]">
-            </div>
+            <button data-id = ${articulo.id}>
+                <img  data-id = ${articulo.id} src="../assets/carrito.png" class ="h-[35px]">
+            </button>
         </div>
     </div>
     </article>`
