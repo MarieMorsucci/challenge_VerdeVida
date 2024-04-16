@@ -87,6 +87,5 @@ export default {
     renderCards,
     filterArticles,
     createCardCarrito,
-    renderCardsCart,
-    
+    renderCardsCart,   
 }
