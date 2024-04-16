@@ -40,8 +40,11 @@ container.addEventListener('click', event => {
     if(productoId) {
         if(!idsCarrito.includes(productoId)) {
             idsCarrito.push(productoId)
+            event.target.parentElement.innerHTML = `<img class ="h-[35px]" data-id = ${productoId} src = "../assets/agregado.png"></img>`
         } else {
             idsCarrito = idsCarrito.filter(id => id != productoId)
+            event.target.parentElement.innerHTML =  `<img data-id = ${productoId} src="../assets/carrito.png" class ="h-[35px]"></img>`
+
         }
     }
     localStorage.setItem('idsCarrito', JSON.stringify(idsCarrito))
