@@ -13,7 +13,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="../style/style.css">
 
@@ -21,57 +22,68 @@
 
 <body class="h-screen flex flex-column flex-wrap content-between box-border">
 
-    <header class="h-1/6 w-full flex flex-wrap justify-between content-center bg-[#bbd6bf]">
-
+    <header class="h-1/6 w-full items-center flex flex-wrap justify-between content-center bg-[#bbd6bf]">
         <div class="flex content-center pl-2">
-            <img class="h-[140px] w-[140px] object-fit" src="../assets/logo_verdevida.png" alt="logo verdeVida">
+            <img class="h-[120px] object-fit" src="../assets/logo_verdevida.png" alt="logo verdeVida">
         </div>
 
-        <nav class=" w-[70%] md:w-[35%] flex flex-wrap gap-1 justify-around content-center p-4 text-white md:max-h-1/6">
-            <a class="px-2 py-2  text-[12px] bg-neutral-500 white rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 "
-                href="#">HOME</a>
-            <a class="px-2 py-2 bg-neutral-500 text-sm white rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 "
-                href="./products.html">PRODUCTS</a>
-            <a class="px-2 py-2 text-base bg-neutral-500 white rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 "
+        <nav class="w-2/5 gap-1 flex flex-col content-center p-4 text-white md:max-h-1/6">
+            <a class="w-[120px] text-sm px-4 py-0.5 bg-neutral-500 white rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 "
+                href="./index.html">HOME</a>
+            <a class="w-[120px] text-sm px-4 py-0.5 bg-neutral-500  white rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 "
+                href="#">PRODUCTS</a>
+            <a class="w-[120px] text-sm px-4 py-0.5 bg-neutral-500 white rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 "
                 href="./cart.html">CART</a>
-            <a class="px-2 py-2 text-base bg-neutral-500 white rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 "
+            <a class="w-[120px] text-sm px-4 py-0.5 bg-neutral-500 white rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 "
+
                 href="./contact.html">CONTACT US!</a>
-
         </nav>
-
     </header>
 
     <main class="min-h-4/6 flex flex-column flex-wrap p-4 justify-between ">
 
-        <div class="min-h-2/4 flex flex-wrap flex-column justify-around content-center pb-6">
-            <img class="h-[200px] w-full  font-[Montserrat] object-scale-down md:h-[400px] md:object-fill md:p-0 "
-                src="../assets/2018-Avengers Infinity War-banner.jpg" alt="bannerMoviestack">
-            <p class="h-1/4 w-4/5 p-3 text-center text-md italic text-[18px] ">
-                ¡Bienvenido a Moviestack, la mejor plataforma de streaming! Sumérgete en un mundo de entretenimiento sin
-                límites, donde encontrarás una amplia variedad de películas, series y documentales. Descubre contenido
-                exclusivo, disfruta de la mejor calidad de imagen y sumérgete en una experiencia única de
-                entretenimiento. Únete a nuestra comunidad de amantes del cine y disfruta de todo lo que tenemos para
-                ofrecerte. ¡Tu próxima aventura comienza aquí!
+        <div class="min-h-2/4 flex flex-wrap flex-column justify-around content-center">
+            <img class="h-1/4 lg:w-2/4 font-[Montserrat] object-scale-down md:h-[400px] md:mt-20 md:p-0  mt-10 "
+                src="../assets/vadim-kaipov-8ZELrodSvTc-unsplash.webp" alt="banner">
+            <p class="text-shadow  w-4/5 p-3 text-center text-md italic text-[18px] font-semibold mb-2 md:mt-10">
+                Bienvenido a Vida Verde: Tu Destino Digital para la Naturaleza
+                En Vida Verde, nos apasiona ofrecerte todo lo que necesitas para crear y mantener espacios verdes llenos
+                de vida y armonía. Desde una amplia variedad de plantas hasta herramientas de jardinería de alta
+                calidad, estamos aquí para ayudarte a transformar tus espacios en oasis naturales. 
+            </p>
+            <p class="text-shadow  w-4/5 p-3 text-center text-md italic text-[18px] mt-10 mb-20 font-semibold ">
+                Somos una plataforma especializada en el comercio electrónico de plantas y artículos de jardín, dedicada
+                a proporcionar a nuestros clientes una amplia gama de productos de alta calidad para embellecer y cuidar
+                sus espacios verdes. Nos esforzamos por ser un destino único donde los amantes de la jardinería puedan
+                encontrar todo lo que necesitan para cultivar, decorar y mantener sus jardines, balcones o interiores
+                con plantas y accesorios cuidadosamente seleccionados.
             </p>
         </div>
         <div class="min-h-2/4 w-full p-3 pt-8 flex flex-column flex-wrap pt-6">
 
             <h3 class="w-full p-8 text-center font-bold  text-lime-900 text-lg">NUESTROS PRODUCTOS..</h3>
 
-            <div class="callAction w-full flex flex-wrap justify-center gap-10 p-3 ">
+            <div class="callAction w-full flex flex-wrap justify-center gap-10 p-3 lg:mb-10 ">
 
                 <article
                     class=" w-3/4 h-[250px] others text-center bg-gray-400 align-middle border-solid border-2 border-black rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 md:h-[300px] md:w-2/5">
-                    <img class="w-full h-full object-cover" src="../assets/movie_wallpaper.jpg" alt="fondo">
-                    <p class="text-center text-white font-[Montserrat] text-3xl  font-bold relative bottom-20"><a
-                            href="./movies.html">PLANTAS</a></p>
+                    <img class="w-full h-full object-cover"
+                        src="../assets/fb5c06964dc19ebc3052a82017083a0bff799d8451de76d2_840.jpg" alt="fondo">
+                    <p
+                        class="text-center text-white font-[Montserrat] text-3xl  font-bold relative bottom-20 shadow-md">
+                        <a href="./products.html">PLANTAS</a>
+                    </p>
                 </article>
 
                 <article
                     class=" w-3/4 h-[250px] others text-center bg-gray-400 align-middle border-solid border-2 border-black rounded-lg hover:scale-110 transition-transform ease-in-out duration-200 md:h-[300px] md:w-2/5">
-                    <img class="w-full h-full object-cover" src="../assets/movie_wallpaper.jpg" alt="fondo">
+                    <img class="w-full h-full object-cover"
+                        src="../assets/dueno-floristeria-habla-cliente-ayudarlo-elegir-ramo-flores_132358-26869.jpg"
+                        alt="fondo">
                     <p class="text-center text-white font-[Montserrat] text-3xl  font-bold relative bottom-20"><a
-                            href="./favorites.html">ARTICULOS DE JARDIN</a></p>
+
+                            href="./contact.html">CONTACTO</a></p>
+
                 </article>
 
             </div>
@@ -83,8 +95,10 @@
     </main>
 
 
+
     <footer class="h-1/6 w-full items-center bg-[#bbd6bf] flex justify-between  text-center text-sm">
         <img class="h-[120px] w-[140px] object-fit rounded-[50%]" src="../assets/logo_verdevida.png" alt="logo verdeVida">
+
         <div class="w-4/6 md:w-3/5 flex flex-wrap pt-4">
             <div class="w-full text-lime-900 flex flex-wrap pl-6 	">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -115,6 +129,3 @@
 </body>
 
 </html>
-
-
-  
