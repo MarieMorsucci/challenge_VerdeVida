@@ -51,7 +51,6 @@ function renderizarProductos() {
 
   
   let textTotal = document.getElementById('totalGral')
-
   textTotal.innerText = `${(total+50).toLocaleString('en-US', {style: "currency", currency: "USD"})}`    
   }
 
