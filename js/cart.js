@@ -37,6 +37,7 @@ console.log(arrayProdComprados);
 //renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards);
 
 //CLICKS EN EL CONTENEDOR
+
 contenedorCards.addEventListener("click", (evento) => {
   let stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`);
   let subtotal = document.querySelector(`h4[data-subtotal="${idCaptado}"]`);
