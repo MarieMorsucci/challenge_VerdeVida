@@ -77,22 +77,35 @@
 
                         -->
         </div>
-        <div class="min-h-[200px] w-2/4 p-3  flex flex-column flex-wrap justify-center bg-neutral-600 rounded-lg  bg-opacity-50 ">
+        <div class="min-h-[200px] w-full md:w-2/4 p-3  flex flex-column flex-wrap justify-center bg-neutral-600 rounded-lg  bg-opacity-50 ">
             <h2 class="w-full text-white font-bold">Resumen de Compra</h2>
-            <div class="flex w-full text-white">
-                <div class ="flex flex-col w-[50%] gap-1">
-                    <h2 id='totalProductos' class="w-[50%]">Productos ()</h2>
-                    <ul id ="productos"></ul>
-                    <p class="w-[50%]">Envío</p>
-                    <p class="w-[50%]">TOTAL</p>
+            <table class="text-white">
+                <thead>
+                    <th id='totalProductos' class ="w-[70%]">Productos ()</th>
+                    <th id="totalPrecio" class="w-[30%]">Subtotal Productos</th>
+                </thead>
+                <tbody id = "productos"></tbody>
+                <tfoot>
+                    <tr>
+                        <td class = "text-end pt-4 pr-1">Envio</td>
+                        <td class ="text-center pt-4">$ 50</td>
+                    </tr>
+                    <tr>
+                        <td class ="text-end">TOTAL</td>
+                        <td id="totalGral" class="text-center"></td>
+                    </tr>
+                </tfoot>
+            </table> 
+                <!-- <div class ="flex flex-col w-[60%] gap-1"> -->
+                    <!-- <ul id ="productos" class ="text-sm flex flex-col flex-wrap"></ul>
+                    <p class="w-full text-end px-4">Envío</p>
+                    <p class="w-full text-end px-4">TOTAL</p>
                 </div>
-                <div class ="flex flex-col items-center [50%] gap-1">
-                    <h2 id="totalPrecio">Subtotal Productos</h2>
-                    <ul id="precios" class ="flex flex-col items-center"></ul>
+                <div class ="flex flex-col items-center [30%] gap-1">
+                    <ul id="precios" class ="flex flex-col items-center text-sm"></ul>
                     <p>$50</p>
                     <p id="totalGral"></p>
-                </div>
-            </div>
+                </div> -->
         </div>
         <div class="w-full flex justify-center">
             <button id="botonSend" class="w-[150px] h-[50px] rounded-lg bg-[#bbd6bf] shadow-2xl hover:scale-110 transition-transform ease-in-out duration-200" type="button" ><a href="./index.html">COMPRAR</a></button>
