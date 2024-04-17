@@ -45,14 +45,14 @@ function renderizarProductos() {
     total+=subtotal
     let fila = document.createElement('tr')
     fila.innerHTML = `<td>${articulo.nombre}</td>
-    <td class = "text-center">$ ${subtotal}</td>`
+    <td class = "text-center">${subtotal.toLocaleString('en-US', {style: "currency", currency: "USD"})}</td>`
     productos.appendChild(fila)
   }
 
-
+  
   let textTotal = document.getElementById('totalGral')
 
-  textTotal.innerText = `$ ${total+50}`    
+  textTotal.innerText = `${(total+50).toLocaleString('en-US', {style: "currency", currency: "USD"})}`    
   }
 
 // function renderizarLista() {
