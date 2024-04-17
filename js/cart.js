@@ -49,7 +49,7 @@ function renderizarLista() {
   }
   let textTotal = document.getElementById('totalGral')
 
-  textTotal.innerText = `$ ${total+10}`    
+  textTotal.innerText = `$ ${total+50}`    
 }
 
 renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
@@ -133,7 +133,7 @@ contenedorCards.addEventListener("click", (evento) => {
 
 botonSend.addEventListener('click', event=>{
 
-    productosId = productosId.filter((producto) => producto.cantidad == 0);
+  productosId = productosId.filter((producto) => producto.cantidad == 0);
     console.log(productosId);
     localStorage.setItem("idsCarrito", JSON.stringify(productosId));
 
@@ -150,168 +150,9 @@ botonClear.addEventListener('click', event=>{
         localStorage.clear('idsCarrito')
     }
     
-
-
-// for (const articulo of articulos) {
-  //     if (articulo.id === productosId.id) {
-    //         arrayProdComprados.push(articulo)
-    //     }
-    // }
     
-
-  // let botonMenos = document.querySelector(`input[data-menos="${idCaptado}"]`)
-  // let idCaptado=evento.target.dataset.datamenos
-  // console.log(idCaptado);
-
-  
-  
-  
-  
-  
-  
-  // contenedorCards.addEventListener('click', evento=>{
-  
-  //   if(evento.target.dataset.operacion && evento.target.dataset.idmod){
-  //       let input = document.querySelector(`input[data-idmod="${evento.target.dataset.idmod}"]`)    
-  //       let id = evento.target.dataset.idmod
-  //       let index = productosId.findIndex(item => item.id === id)
-        
-  //       if(evento.target.dataset.operacion ==='suma') {
-  //         input.value= parseInt(input.value) + 1
-  //         if(index != -1) {
-  //           productosId[index].cantidad += 1
-  //         }
-  //       } else if (evento.target.dataset.operacion === 'resta') {
-  //         input.value = parseInt(input.value) - 1
-  //         if(index != -1 && productosId[index].cantidad > 0) {
-  //           productosId[index].cantidad -= 1
-  //         }
-  //       }
-  //     }
-  //     localStorage.setItem('idsCarrito', JSON.stringify(productosId))
-  //     renderizarLista()
-  //   })    
-//     console.log();
-//     let inputCaptado = document.querySelector(`input[data-idmod="${idCaptado}"]`)
-//     console.log(inputCaptado)
-    
-//     if(evento.target.dataset.menos){
-
-
-
-//     }
-    
-
-
-// //let idCaptado = evento.target.dataset.idmod;
-  
-  
-
-
-
-
-// /* 
-//     if (evento.target.dataset.idmod) {
-//         let idCaptado = evento.target.dataset.idmod;
-//         console.log(inputCaptado);
-//         console.log(idCaptado);
-    
-//         let auxi = arrayActual(arrayProdComprados, productosId).find(
-//           (obj) => obj.id == idCaptado
-//         );
-//         console.log(auxi);
-    
-//         //Unidades del Input
-//         let stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`);
-    
-//         if (inputCaptado > 0 && inputCaptado <= auxi.stock) {
-//           stockact.innerHTML = `Hay actualmente ${auxi.stock} unidades disponibles`;
-//         } else if (inputCaptado > auxi.stock) {
-//           stockact.innerHTML = "No tenemos las unidades requeridas.";
-//         } else if (inputCaptado < 0) {
-//           stockact.innerHTML = `La cantidad ingresada no es válida`;
-//         } else {
-//           stockact.innerHTML = `Hay actualmente ${auxi.stock} unidades disponibles`;
-//         }
-    
-//         //Aviso de stock
-//         if (auxi.stock > 0 && auxi.stock <= 5) {
-//           stockact.className = " text-red-800";
-//           stockact.innerHTML = "Solo quedan las últimas!! ";
-//         }
-    
-//         //Logica de Subtotal Tarjeta
-//         if (inputCaptado >= 0 && inputCaptado <= auxi.stock) {
-    
-//           let subtotal = document.querySelector(`h4[data-subtotal="${idCaptado}"]`);
-//           subtotal.innerHTML = `$${inputCaptado * auxi.precio_venta}`;
-    
-//         } else if (inputCaptado > auxi.stock) {
-//           subtotal.innerHTML = "$-";
-//         } else {
-//           subtotal.innerHTML = "$-";
-//         }
-      
-//         //LOGICA DE TOTALES DE ABAJO: crear un json para llevarme abajo
-//       }
-//  */
-
-
-// })
-
-
-
-
-
-
-
-
-// //Ingreso de Inputs en las tarjetas
-
-
-
-// //some-->
-// //*arrayCompradosTotal[arrayCompradosTotal.findIndex(elem=> elem.id == idCaptado)].cantidadProducto
-
-
-// //no 
-//   for (const iterator of arrayCompradosTotal ) {
-//     if(!iterator.includes(idCaptado)){//some-->
-//     //aux=`{'id':'${}', 'cantidad':'${*}'}`
-//     arrayCompradosTotal.push(aux)
-//     console.log(arrayCompradosTotal);
-//     }else{
-//     iterator.cantidad=`${inputCaptado}`
-//     }
-    
-    
-//     console.log(arrayCompradosTotal);
-    
-//     //'id'=idCaptado
-//     //inputCaptado
-// } 
-
-
-// contenedorCards.addEventListener("click", (evento) => {
-
-//   console.log(evento.target.dataset.ideliminar);
-//   console.log(productosId);
-
-//   if (evento.target.dataset.ideliminar) {
-//     let idelim = evento.target.dataset.ideliminar;
-
-//     if (productosId.includes(idelim)) {
-//       console.log(idelim);
-//       productosId = productosId.filter((id) => id != idelim);
-//       console.log(productosId);
-//       localStorage.setItem("idsCarrito", JSON.stringify(productosId));
-//     }
-//   }
-// });
-
-// //renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
-
-console.log(productosId.length);
-if(productosId.length>0){
-    renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
-}else{ contenedorCards.innerHTML="NO HAY PRODUCTOS EN TU CARRITO"}
+    console.log(productosId.length);
+    if(productosId.length>0){
+        renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
+    }else{ contenedorCards.innerHTML="NO HAY PRODUCTOS EN TU CARRITO"}
+  })
