@@ -20,11 +20,11 @@ funciones.renderCards(articulos, idsCarrito, container)
 container.addEventListener('click', event => {
     let productoId = event.target.dataset.id
     if(productoId) {
-        if(!idsCarrito.includes(productoId)) {
-            idsCarrito.push(productoId)
+        if(!idsCarrito.some(obj => obj.id == productoId)) {
+            idsCarrito.push({'id':productoId , 'cantidad':1 })
             event.target.parentElement.innerHTML = `<img class ="h-[35px] lg:h-[50px]" data-id = ${productoId} src = "../assets/agregado.png"></img>`
         } else {
-            idsCarrito = idsCarrito.filter(id => id != productoId)
+            idsCarrito = idsCarrito.filter(obj => obj.id != productoId)
             event.target.parentElement.innerHTML =  `<img data-id = ${productoId} src="../assets/carrito.png" class ="h-[35px] lg:h-[50px]"></img>`
         }
     }
