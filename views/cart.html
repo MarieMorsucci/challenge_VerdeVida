@@ -77,19 +77,25 @@
 
                         -->
         </div>
-        <div class="h-[150px] w-2/4 p-3  flex flex-column flex-wrap justify-center bg-neutral-600 rounded-lg  bg-opacity-50 ">
+        <div class="min-h-[200px] w-2/4 p-3  flex flex-column flex-wrap justify-center bg-neutral-600 rounded-lg  bg-opacity-50 ">
             <h2 class="w-full text-white font-bold">Resumen de Compra</h2>
             <div class="flex w-full text-white">
-                <p id='totalProductos' class="w-[50%]">Productos ()</p>
-                <p id="totalPrecio">Subtotal Productos</p>
+                <div class ="flex flex-col w-[50%] gap-1">
+                    <h2 id='totalProductos' class="w-[50%]">Productos ()</h2>
+                    <ul id ="productos"></ul>
+                </div>
+                <div class ="flex flex-col w-[50%] gap-1">
+                    <h2 id="totalPrecio">Subtotal Productos</h2>
+                    <ul id="precios"></ul>
+                </div>
             </div>
             <div class="flex w-full text-white">
                 <p class="w-[50%]">Envío</p>
-                <p>$100</p>
+                <p>$10</p>
             </div>
             <div class="flex w-full text-white">
                 <p class="w-[50%]">TOTAL</p>
-                <p id="totalGral">$10.000 </p>
+                <p id="totalGral"></p>
             </div>
         </div>
         <div class="w-full flex justify-center">
