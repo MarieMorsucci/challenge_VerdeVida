@@ -2,7 +2,7 @@
     margin: 0;
     padding : 0;
     box-sizing: border-box;
-    outline: solid 1px green
+    /* outline: solid 1px green */
 }
 
 .montserrat {
@@ -15,16 +15,20 @@
 
 
 nav a[href="#"] {
-background-color: hwb(90 57% 17%);
+background-color: #b3d491;
 color: black;
 }
 
 body{
     background-image: url('../assets/fondo_op.jpg');
     background-size: cover;
-    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 color{
     color: #bbd6bf;
+}
+.sombraTexto{
+    text-shadow: rgb(200, 230, 184) 1px 0 10px;;
 }
