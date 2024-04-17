@@ -49,7 +49,7 @@ function renderizarProductos() {
     productos.appendChild(fila)
   }
 
-  
+
   let textTotal = document.getElementById('totalGral')
   textTotal.innerText = `${(total+50).toLocaleString('en-US', {style: "currency", currency: "USD"})}`    
   }
@@ -78,7 +78,7 @@ function renderizarProductos() {
 //   textTotal.innerText = `$ ${total+50}`    
 // }
 
-
+renderizarProductos()
 contenedorCards.addEventListener("click", (evento) => {
   let stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`);
   let subtotal = document.querySelector(`h4[data-subtotal="${idCaptado}"]`);
@@ -159,9 +159,9 @@ contenedorCards.addEventListener("click", (evento) => {
   }
 
   
+  renderizarProductos()
 });
 
-renderizarProductos()
 
 let cont; 
 
