@@ -6,6 +6,7 @@ let arrayProdComprados = [];
 let LS = [];
 let arrayCompradosTotal=[];
 let articulos = data.map(articulo => articulo) 
+let total = 0
 
 LS = JSON.parse(localStorage.getItem("idsCarrito"));
 
@@ -40,6 +41,7 @@ function renderizarLista() {
     let cantidad = productosId.find(item => item.id == articulo.id)?.cantidad || 0
     let subtotal = cantidad * articulo.precio_venta
     listaPrecios.innerHTML += `<li>$ ${subtotal}</li>`
+    total+=subtotal
   }  
 }
 
@@ -70,8 +72,9 @@ contenedorCards.addEventListener('click', evento=>{
     renderizarLista()
   })    
   
-  let total = document.getElementById('totalGral')
-  
+  let textTotal = document.getElementById('totalGral')
+
+  textTotal.innerText = `$ ${total}`
 // for (const articulo of articulos) {
 //     if (articulo.id === productosId.id) {
 //         arrayProdComprados.push(articulo)
