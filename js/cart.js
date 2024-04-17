@@ -81,12 +81,15 @@ contenedorCards.addEventListener("click", (evento) => {
     let auxi = data.find((obj) => obj.id == idCaptado);
     aux = productosId.find((obj) => obj.id == idCaptado).cantidad + 1;//CANTIDAD DEL LS
 
+
     //ALERTA DE ULTIMAS UNIDADES
    /*  if (auxi.stock > 0 && auxi.stock <= 5) {
       stockact.className = " text-red-800";
       stockact.innerHTML = `Solo quedan las últimas ${auxi.stock} unidades!! `;
     }else{stockact.innerHTML = `Hay actualmente ${obj.stock} unidades disponibles`}
  */
+
+
     //Logica de Subtotal Tarjeta
     if (aux >= 0 && aux <= auxi.stock) {
       productosId[pos].cantidad++;
@@ -94,6 +97,8 @@ contenedorCards.addEventListener("click", (evento) => {
       inputCaptado.setAttribute("value", `${aux}`);
       subtotal.innerHTML = `$${aux * auxi.precio_venta}`;
       stockact.innerHTML = `Hay actualmente ${auxi.stock} unidades disponibles`
+      
+      
       //Aviso de stock
     } else if (aux > auxi.stock) {
       subtotal.innerHTML = `$${aux * auxi.precio_venta}`;
