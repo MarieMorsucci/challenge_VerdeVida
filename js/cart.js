@@ -49,7 +49,7 @@ function renderizarLista() {
   }
   let textTotal = document.getElementById('totalGral')
 
-  textTotal.innerText = `$ ${total+10}`    
+  textTotal.innerText = `$ ${total+50}`    
 }
 
 renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
