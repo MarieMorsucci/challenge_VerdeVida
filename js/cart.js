@@ -31,7 +31,6 @@ function arrayActual(arrayProdComprados, productosId) {
 function renderizarProductos() {
   let productos = document.getElementById('productos')
   // let listaPrecios = document.getElementById('precios')
-
   productos.innerHTML = ''
   // listaPrecios.innerHTML = ''
   // listaProductos.innerHTML = ''
@@ -149,7 +148,10 @@ contenedorCards.addEventListener("click", (evento) => {
       subtotal.innerHTML = "$-";
     }
   }
-  
+
+  renderizarProductos()
+
+
   if (evento.target.dataset.ideliminar) {
     stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`)
     alert('El producto ha sido eliminado del carrito')
@@ -161,7 +163,7 @@ contenedorCards.addEventListener("click", (evento) => {
   
 });
 
-renderizarProductos()
+
 
 let cont; 
 
