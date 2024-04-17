@@ -22,7 +22,7 @@ color: black;
 
 body{
     background-image: url('../assets/fondo_op.jpg');
-    background-size: fill;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }

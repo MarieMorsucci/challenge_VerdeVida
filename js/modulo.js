@@ -36,7 +36,7 @@ export function createCardCarrito(obj) {
         <div class="h-[30px] w-full text-center flex justify-center gap-2 p-1">
 
         <button data-menos='${obj.id}' type="button" class="w-[20px] h-[30px] bg-white text-center border-solid border-black font-bold text-[20px] text-lime-900">-</button>
-        <input data-idmod='${obj.id}'  type="text" value="1" class="w-[150px] h-[25px] p-2 text-sm" >
+        <input data-idmod='${obj.id}'  type="text" value="0" class="w-[150px] h-[25px] p-2 text-sm" >
         <button data-mas='${obj.id}' type="button" class="w-[20px] h-[30px] bg-white text-center border-solid border-black font-bold text-[20px] text-lime-900">+</button>
     </div>
         <p data-stockact="${obj.id}" class="w-full text-sm italic text-center">Hay actualmente ${obj.stock} unidades disponibles</p>
@@ -52,7 +52,7 @@ export function createCardCarrito(obj) {
   return template.innerHTML;
 }
 
-export function renderCardsCart(array, container) {
+export function renderCardsCart(array,container) {
   container.innerHTML = "";
   let template = "";
   for (const iterator of array) {

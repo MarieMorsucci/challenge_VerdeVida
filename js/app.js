@@ -21,7 +21,7 @@ container.addEventListener('click', event => {
     let productoId = event.target.dataset.id
     if(productoId) {
         if(!idsCarrito.some(obj => obj.id == productoId)) {
-            idsCarrito.push({'id':productoId , 'cantidad':1 })
+            idsCarrito.push({'id':productoId , 'cantidad':0 })
             event.target.parentElement.innerHTML = `<img class ="h-[35px] lg:h-[50px]" data-id = ${productoId} src = "../assets/agregado.png"></img>`
         } else {
             idsCarrito = idsCarrito.filter(obj => obj.id != productoId)
