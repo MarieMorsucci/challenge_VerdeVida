@@ -133,7 +133,7 @@ contenedorCards.addEventListener("click", (evento) => {
 
 botonSend.addEventListener('click', event=>{
 
-    productosId = productosId.filter((producto) => producto.cantidad == 0);
+  productosId = productosId.filter((producto) => producto.cantidad == 0);
     console.log(productosId);
     localStorage.setItem("idsCarrito", JSON.stringify(productosId));
 
@@ -150,6 +150,11 @@ botonClear.addEventListener('click', event=>{
         localStorage.clear('idsCarrito')
     }
     
+    
+    console.log(productosId.length);
+    if(productosId.length>0){
+        renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
+    }else{ contenedorCards.innerHTML="NO HAY PRODUCTOS EN TU CARRITO"}
 
 
 // for (const articulo of articulos) {
@@ -310,8 +315,3 @@ botonClear.addEventListener('click', event=>{
 // });
 
 // //renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
-
-console.log(productosId.length);
-if(productosId.length>0){
-    renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
-}else{ contenedorCards.innerHTML="NO HAY PRODUCTOS EN TU CARRITO"}
