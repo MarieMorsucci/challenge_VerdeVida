@@ -29,7 +29,7 @@ container.addEventListener('click', event => {
         }
     }
     localStorage.setItem('idsCarrito', JSON.stringify(idsCarrito))
-
+})
 
 inputText.addEventListener('input', event => {
     input = event.target.value.toLowerCase().trim()
@@ -48,5 +48,4 @@ select.addEventListener('change', event => {
     if(filteredArticles.length > 0) {
         funciones.renderCards(filteredArticles, idsCarrito, container)
     }
-})
 })
