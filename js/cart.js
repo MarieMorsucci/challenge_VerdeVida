@@ -28,33 +28,60 @@ function arrayActual(arrayProdComprados, productosId) {
   return arrayProdComprados;
 }
 
-function renderizarLista() {
-  let listaProductos = document.getElementById('productos')
-  let listaPrecios = document.getElementById('precios')
+function renderizarProductos() {
+  let productos = document.getElementById('productos')
+  // let listaPrecios = document.getElementById('precios')
 
-  listaPrecios.innerHTML = ''
-  listaProductos.innerHTML = ''
+  productos.innerHTML = ''
+  // listaPrecios.innerHTML = ''
+  // listaProductos.innerHTML = ''
   
   let total = 0
 
   for (const articulo of arrayProdComprados) {
-    listaProductos.innerHTML += `<li>${articulo.nombre}</li>`    
-  }
 
-  for (const articulo of arrayProdComprados) {
     let cantidad = productosId.find(item => item.id == articulo.id)?.cantidad || 0
     let subtotal = cantidad * articulo.precio_venta
     total+=subtotal
-    listaPrecios.innerHTML += `<li>$ ${subtotal}</li>`
+    let fila = document.createElement('tr')
+    fila.innerHTML = `<td>${articulo.nombre}</td>
+    <td class = "text-center">$ ${subtotal}</td>`
+    productos.appendChild(fila)
   }
+
+
   let textTotal = document.getElementById('totalGral')
 
   textTotal.innerText = `$ ${total+50}`    
-}
+  }
+
+// function renderizarLista() {
+//   let listaProductos = document.getElementById('productos')
+//   let listaPrecios = document.getElementById('precios')
+
+//   listaPrecios.innerHTML = ''
+//   listaProductos.innerHTML = ''
+  
+//   let total = 0
+
+//   for (const articulo of arrayProdComprados) {
+//     listaProductos.innerHTML += `<li>${articulo.nombre}</li>`    
+//   }
+
+//   for (const articulo of arrayProdComprados) {
+//     let cantidad = productosId.find(item => item.id == articulo.id)?.cantidad || 0
+//     let subtotal = cantidad * articulo.precio_venta
+//     total+=subtotal
+//     listaPrecios.innerHTML += `<li>$ ${subtotal}</li>`
+//   }
+//   let textTotal = document.getElementById('totalGral')
+
+//   textTotal.innerText = `$ ${total+50}`    
+// }
 
 renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
 document.addEventListener('DOMContentLoaded', () => {
-  renderizarLista()
+  renderizarProductos()
 })
 
 contenedorCards.addEventListener("click", (evento) => {
@@ -134,6 +161,8 @@ contenedorCards.addEventListener("click", (evento) => {
     productosId = productosId.filter((producto) => producto.id != idelim);
     localStorage.setItem("idsCarrito", JSON.stringify(productosId));
   }
+
+  renderizarProductos()
 
 });
 
