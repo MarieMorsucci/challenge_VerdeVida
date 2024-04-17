@@ -6,22 +6,17 @@ let botonSend= document.getElementById('botonSend')
 let productosId = [];
 let arrayProdComprados = [];
 let LS = [];
-let arrayCompradosTotal = [];
+let articulos = data.map(articulo => articulo) 
+let total = 0
 let idCaptado;
 let inputCaptado;
 let aux;
-
-console.log(data);
-
-// Render de productos actualizados
 
 LS = JSON.parse(localStorage.getItem("idsCarrito"));
 
 if (LS) {
   productosId = LS;//array de ids
 }
-
-console.log(LS);
 
 function arrayActual(arrayProdComprados, productosId) {
   for (const iterator of productosId) {
@@ -32,11 +27,35 @@ function arrayActual(arrayProdComprados, productosId) {
   }
   return arrayProdComprados;
 }
-console.log(arrayProdComprados);
 
-//renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards);
+function renderizarLista() {
+  let listaProductos = document.getElementById('productos')
+  let listaPrecios = document.getElementById('precios')
 
-//CLICKS EN EL CONTENEDOR
+  listaPrecios.innerHTML = ''
+  listaProductos.innerHTML = ''
+  
+  let total = 0
+
+  for (const articulo of arrayProdComprados) {
+    listaProductos.innerHTML += `<li>${articulo.nombre}</li>`    
+  }
+
+  for (const articulo of arrayProdComprados) {
+    let cantidad = productosId.find(item => item.id == articulo.id)?.cantidad || 0
+    let subtotal = cantidad * articulo.precio_venta
+    total+=subtotal
+    listaPrecios.innerHTML += `<li>$ ${subtotal}</li>`
+  }
+  let textTotal = document.getElementById('totalGral')
+
+  textTotal.innerText = `$ ${total+50}`    
+}
+
+renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
+document.addEventListener('DOMContentLoaded', () => {
+  renderizarLista()
+})
 
 contenedorCards.addEventListener("click", (evento) => {
   let stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`);
@@ -114,11 +133,12 @@ contenedorCards.addEventListener("click", (evento) => {
     localStorage.setItem("idsCarrito", JSON.stringify(productosId));
   }
 
+  renderizarLista()
 });
 
 botonSend.addEventListener('click', event=>{
 
-    productosId = productosId.filter((producto) => producto.cantidad == 0);
+  productosId = productosId.filter((producto) => producto.cantidad == 0);
     console.log(productosId);
     localStorage.setItem("idsCarrito", JSON.stringify(productosId));
 
@@ -135,13 +155,9 @@ botonClear.addEventListener('click', event=>{
         localStorage.clear('idsCarrito')
     }
     
-
-
-})
-
-console.log(productosId.length);
-if(productosId.length>0){
-    renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
-}else{ contenedorCards.innerHTML="NO HAY PRODUCTOS EN TU CARRITO"}
-
-//renderCardsCart(arrayActual(arrayProdComprados, productosId),contenedorCards)
+    
+    console.log(productosId.length);
+    if(productosId.length>0){
+        renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
+    }else{ contenedorCards.innerHTML="NO HAY PRODUCTOS EN TU CARRITO"}
+  })

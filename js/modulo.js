@@ -36,9 +36,11 @@ export function createCardCarrito(obj) {
     <div class=" w-full flex flex-wrap justify-center">
         <div class="h-[30px] w-full text-center flex justify-center gap-2 p-1">
 
+
         <button data-menos='${obj.id}' type="button" class="w-[20px] h-[25px] bg-white text-center border-solid border-black font-bold text-[20px] text-lime-900">-</button>
         <input data-idmod='${obj.id}'  type="text" value="0" class="w-[150px] h-[25px] p-2 text-sm" >
         <button data-mas='${obj.id}' type="button" class="w-[20px] h-[25px] bg-white text-center border-solid border-black font-bold text-[20px] text-lime-900">+</button>
+
     </div>
         <p data-stockact="${obj.id}" class="w-full text-sm italic text-center text-lime-900">Hay actualmente ${obj.stock} unidades disponibles</p>
     </div>
