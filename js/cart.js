@@ -155,13 +155,19 @@ contenedorCards.addEventListener("click", (evento) => {
   }
   
   if (evento.target.dataset.ideliminar) {
+    stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`)
+    stockact.innerHTML = "Producto eliminado";
     let idelim = evento.target.dataset.ideliminar;
     productosId = productosId.filter((producto) => producto.id != idelim);
     localStorage.setItem("idsCarrito", JSON.stringify(productosId));
   }
 
   renderizarProductos()
+
 });
+
+
+let cont; 
 
 botonSend.addEventListener('click', event=>{
 
