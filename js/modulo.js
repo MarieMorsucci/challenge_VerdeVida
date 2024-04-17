@@ -54,7 +54,6 @@ return template.innerHTML
 
 }
 
-
 export function renderCardsCart (array, container) {
     
     container.innerHTML=""

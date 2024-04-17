@@ -76,9 +76,6 @@ contenedorCards.addEventListener("keyup", (evento) => {
       subtotal.innerHTML = "$-";
     }
 
-
-
-
   }
 
 });
