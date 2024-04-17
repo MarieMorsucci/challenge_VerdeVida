@@ -79,10 +79,6 @@ function renderizarProductos() {
 //   textTotal.innerText = `$ ${total+50}`    
 // }
 
-renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
-document.addEventListener('DOMContentLoaded', () => {
-  renderizarProductos()
-})
 
 contenedorCards.addEventListener("click", (evento) => {
   let stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`);
@@ -129,11 +125,7 @@ contenedorCards.addEventListener("click", (evento) => {
 
 
     //ALERTA DE ULTIMAS UNIDADES
-   /*  if (auxi.stock > 0 && auxi.stock <= 5) {
-      stockact.className = " text-red-800";
-      stockact.innerHTML = `Solo quedan las últimas ${auxi.stock} unidades!! `;
-    }else{stockact.innerHTML = `Hay actualmente ${obj.stock} unidades disponibles`}
- */
+  
 
 
     //Logica de Subtotal Tarjeta
@@ -142,8 +134,13 @@ contenedorCards.addEventListener("click", (evento) => {
       localStorage.setItem("idsCarrito", JSON.stringify(productosId));
       inputCaptado.setAttribute("value", `${aux}`);
       subtotal.innerHTML = `$${aux * auxi.precio_venta}`;
-      stockact.innerHTML = `Hay actualmente ${auxi.stock} unidades disponibles`
-      
+      //stockact.innerHTML = `Hay actualmente ${auxi.stock} unidades disponibles`
+
+        if (auxi.stock > 0 && auxi.stock <= 5) {
+      stockact.className = " text-red-800";
+      stockact.innerHTML = `Solo quedan las últimas ${auxi.stock} unidades!! `;
+    }else{stockact.innerHTML = `Hay actualmente ${auxi.stock} unidades disponibles`}
+
       
       //Aviso de stock
     } else if (aux > auxi.stock) {
@@ -156,16 +153,16 @@ contenedorCards.addEventListener("click", (evento) => {
   
   if (evento.target.dataset.ideliminar) {
     stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`)
-    stockact.innerHTML = "Producto eliminado";
+    alert('El producto ha sido eliminado del carrito')
     let idelim = evento.target.dataset.ideliminar;
     productosId = productosId.filter((producto) => producto.id != idelim);
     localStorage.setItem("idsCarrito", JSON.stringify(productosId));
   }
 
-  renderizarProductos()
-
+  
 });
 
+renderizarProductos()
 
 let cont; 
 
@@ -183,14 +180,16 @@ botonSend.addEventListener('click', event=>{
 
 botonClear.addEventListener('click', event=>{
     let confirmar = confirm("Se vaciará el carrito con todos tus productos, deseas continuar?")
-   
-    if(confirmar){
+   if(confirmar){
         localStorage.clear('idsCarrito')
-    }
-    
-    
-    console.log(productosId.length);
-    if(productosId.length>0){
-        renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
-    }else{ contenedorCards.innerHTML="NO HAY PRODUCTOS EN TU CARRITO"}
+
+    }   
   })
+
+  console.log(productosId.length);
+
+  if(productosId.length>0){
+    renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
+  }else{ contenedorCards.innerHTML="NO HAY PRODUCTOS EN TU CARRITO"}
+
+
