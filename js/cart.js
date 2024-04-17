@@ -35,6 +35,7 @@ function renderizarLista() {
   listaPrecios.innerHTML = ''
   listaProductos.innerHTML = ''
   
+  let total = 0
 
   for (const articulo of arrayProdComprados) {
     listaProductos.innerHTML += `<li>${articulo.nombre}</li>`    
@@ -43,13 +44,18 @@ function renderizarLista() {
   for (const articulo of arrayProdComprados) {
     let cantidad = productosId.find(item => item.id == articulo.id)?.cantidad || 0
     let subtotal = cantidad * articulo.precio_venta
-    listaPrecios.innerHTML += `<li>$ ${subtotal}</li>`
     total+=subtotal
-  }  
+    listaPrecios.innerHTML += `<li>$ ${subtotal}</li>`
+  }
+  let textTotal = document.getElementById('totalGral')
+
+  textTotal.innerText = `$ ${total+10}`    
 }
 
-renderCardsCart(arrayActual(arrayProdComprados,productosId), contenedorCards); 
-renderizarLista()
+renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
+document.addEventListener('DOMContentLoaded', () => {
+  renderizarLista()
+})
 
 contenedorCards.addEventListener("click", (evento) => {
   let stockact = document.querySelector(`p[data-stockact="${idCaptado}"]`);
@@ -121,6 +127,7 @@ contenedorCards.addEventListener("click", (evento) => {
     localStorage.setItem("idsCarrito", JSON.stringify(productosId));
   }
 
+  renderizarLista()
 });
 
 botonSend.addEventListener('click', event=>
@@ -128,24 +135,17 @@ alert('Gracias por tu compra!! \n En breve nos contactaremos para hacerte llegar
 
 
 botonClear.addEventListener('click', event=>{
-localStorage.clear('idsCarrito')
-alert('Gracias por tu compra!! \n En breve nos contactaremos para hacerte llegar el paquete')
-
-
+  localStorage.clear('idsCarrito')
+  alert('Gracias por tu compra!! \n En breve nos contactaremos para hacerte llegar el paquete')
 })
 
-renderCardsCart(arrayActual(arrayProdComprados, productosId), contenedorCards)
 
-
-let textTotal = document.getElementById('totalGral')
-
-textTotal.innerText = `$ ${total}`
 // for (const articulo of articulos) {
-//     if (articulo.id === productosId.id) {
-//         arrayProdComprados.push(articulo)
-//     }
-// }
-
+  //     if (articulo.id === productosId.id) {
+    //         arrayProdComprados.push(articulo)
+    //     }
+    // }
+    
 
   // let botonMenos = document.querySelector(`input[data-menos="${idCaptado}"]`)
   // let idCaptado=evento.target.dataset.datamenos
